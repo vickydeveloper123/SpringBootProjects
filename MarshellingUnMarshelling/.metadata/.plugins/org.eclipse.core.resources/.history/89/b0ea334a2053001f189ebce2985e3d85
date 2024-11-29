@@ -1,0 +1,20 @@
+package com.example.rest.demo.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.rest.demo.binding.MySelf;
+
+@RestController
+public class MySelfDataController {
+	
+	@GetMapping(value="/car",produces= {"application/xml","application/json"})
+	public ResponseEntity<MySelf> getCar() {
+		Car car = new Car();
+		car.setId("ts01rr1122");
+		car.setName("buggati");
+		car.setPrice(900000.00);
+		return new ResponseEntity<Car>(car, HttpStatus.OK);
+
+}

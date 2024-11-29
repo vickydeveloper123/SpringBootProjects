@@ -1,0 +1,18 @@
+package com.example.demo.dto.responsedto;
+
+import java.util.ArrayList;
+
+import lombok.Data;
+
+@Data
+public class CateogoryResponseDTO {
+	
+	private Long id;
+	
+	private String name;
+	
+	private List<String> name=new ArrayList<>();
+	
+	
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun MathsUtilsTest" project="Junit5-basics" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="io.dora.MathsUtilsTest" time="0.015" displayname="MathsUtilsTest" uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]">
+    <testcase name="test" classname="io.dora.MathsUtilsTest" time="0.007" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]/[method:test()]"/>
+    <testcase name="testdivision" classname="io.dora.MathsUtilsTest" time="0.003" displayname="testdivision()" uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]/[method:testdivision()]"/>
+    <testcase name="testComputeCircleRadius" classname="io.dora.MathsUtilsTest" time="0.001" displayname="testComputeCircleRadius()" uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]/[method:testComputeCircleRadius()]"/>
+  </testsuite>
+</testrun>

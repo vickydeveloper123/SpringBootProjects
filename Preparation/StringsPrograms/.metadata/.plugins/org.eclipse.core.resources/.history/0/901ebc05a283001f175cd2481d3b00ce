@@ -1,0 +1,31 @@
+package com.stringprograms;
+
+public class RemovingDuplicatesInString {
+
+	
+	public static void main(String[] args) {
+		
+		
+		System.out.println(" Removing Duplicates elements in string.....");
+		String message="Programming In Java";
+		
+		StringBuilder builder=new StringBuilder();
+		message.chars().distinct().forEach(a->builder.append((char) a));
+		System.out.println(builder);
+		
+		System.out.println("------2. Approach---------------------------------------------------");
+		
+		
+		StringBuilder builde1r=new StringBuilder();
+
+		for(int i=0; i<message.length()-1;i++) {
+			char charAt = message.charAt(i);
+			int indexOf = message.indexOf(charAt,i+1);
+			
+			if(indexOf==-1) {
+				
+			}
+		}
+
+	}
+}

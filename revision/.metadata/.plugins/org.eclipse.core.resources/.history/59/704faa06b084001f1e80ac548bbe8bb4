@@ -1,0 +1,21 @@
+package com.dora;
+
+public class Students {
+	
+	public String name;
+	public int rollNo;
+	public long id;
+	public String email;
+	
+	Students(){
+		System.out.println("This class belongs to Students.");
+	}
+	
+	public static void main(String[] args) {
+		
+		Students student1=new Students();
+		System.out.println(student1.id);
+	}
+	
+
+}

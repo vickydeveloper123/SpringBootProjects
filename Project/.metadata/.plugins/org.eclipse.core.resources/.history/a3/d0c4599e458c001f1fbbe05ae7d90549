@@ -1,0 +1,55 @@
+package com.user.config;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
+
+import jakarta.mail.internet.MimeMessage;
+
+@Component
+public class EmailService {
+
+	private Logger logger = LoggerFactory.getLogger(EmailService.class);
+
+	@Autowired
+	private JavaMailSender mailSender;
+
+	
+	public boolean sendMail(String to, String subject, String body) 
+	{
+		boolean isMailSent = false;
+		try {
+
+			MimeMessage mimeMessage = mailSender.createMimeMessage();
+			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+			helper.setTo(to);
+			helper.setSubject(subject);
+			helper.setText(body, true);
+			mailSender.send(mimeMessage);
+			isMailSent = true;
+		} catch (Exception e) {
+			logger.error("Exception occured", e);
+		}
+		return isMailSent;
+	}
+	
+	
+}
+
+
+
+//is typically used in a Spring application to create a MIME email message
+	// using the JavaMailSender interface.
+	// This is often part of the process of sending an email using Spring’s
+	// JavaMailSender with MimeMessage for more complex emails,
+
+	// =============================== MimeMessageHelper =======================
+	// is used to wrap the MimeMessage to make it easier to add various email
+	// attributes
+	// (like recipients, subject, text content, attachments, etc.). The
+	// MimeMessageHelper class in Spring simplifies working with MimeMessage

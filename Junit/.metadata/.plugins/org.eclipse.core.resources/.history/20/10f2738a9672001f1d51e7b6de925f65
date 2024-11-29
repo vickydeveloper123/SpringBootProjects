@@ -1,0 +1,24 @@
+package io.dora;
+
+ 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class MathsUtilsTest {
+
+	@Test
+	void test() {
+
+		System.out.println("----------We are testing our applications by having some test cases.-------------");
+	
+		int expected =2;
+		
+		MathsUtils mathsTest=new MathsUtils();
+		mathsTest.add(1, 8);
+		int actual=mathsTest.add(1,1 );
+		assertEquals(expected, actual);
+		
+	}
+
+}

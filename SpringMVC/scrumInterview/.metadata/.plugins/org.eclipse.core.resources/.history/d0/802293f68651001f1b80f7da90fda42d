@@ -1,0 +1,112 @@
+package com.marshelling.project.MarshellingProject.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@XmlRootElement(name="student")
+@XmlAccessorType(XmlAccessType.FIELD)
+@Table(name="student_marshelling")
+public class Student {
+	package com.pro.binding;
+
+	import javax.xml.bind.annotation.XmlAccessType;
+	import javax.xml.bind.annotation.XmlAccessorOrder;
+	import javax.xml.bind.annotation.XmlAccessorType;
+	import javax.xml.bind.annotation.XmlAttribute;
+	import javax.xml.bind.annotation.XmlRootElement;
+	import javax.xml.bind.annotation.XmlTransient;
+
+	@XmlRootElement(name = "student")
+	@XmlAccessorType(XmlAccessType.FIELD)
+	@XmlAccessorOrder
+	public class Student {
+		private Integer id;
+		private String name;
+		private Integer rank;
+
+		private Address address;
+		//@XmlAttribute
+		private String branch;
+
+		public Student(String branch) {
+
+		}
+
+		public Student() {
+			super();
+		}
+
+		public Integer getId() {
+			return id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Integer getRank() {
+			return rank;
+		}
+
+		public void setRank(Integer rank) {
+			this.rank = rank;
+		}
+
+		public Address getAddress() {
+			return address;
+		}
+
+		public void setAddress(Address address) {
+			this.address = address;
+		}
+
+		public String getBranch() {
+			return branch;
+		}
+
+		public void setBranch(String branch) {
+			this.branch = branch;
+		}
+
+		public Student(Integer id, String name, Integer rank, Address address, String branch) {
+			super();
+			this.id = id;
+			this.name = name;
+			this.rank = rank;
+			this.address = address;
+			this.branch = branch;
+		}
+
+		@Override
+		public String toString() {
+			return "Student [id=" + id + ", name=" + name + ", rank=" + rank + ", address=" + address + ", branch=" + branch
+					+ "]";
+		}
+
+		
+	}
+
+	
+	
+
+}

@@ -1,0 +1,4 @@
+spring.mvc.view.suffix=/templates/
+
+spring.mvc.view.prefix=index.html
+

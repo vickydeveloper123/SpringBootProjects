@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: 4_GreetRESTAPI-1
+boot:admin:client:url: -http://localhost:1111/
+
+server:
+  port: 9091

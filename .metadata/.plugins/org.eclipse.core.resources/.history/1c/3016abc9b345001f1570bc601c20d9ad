@@ -1,0 +1,9 @@
+package com.example.demo.dto.requestdto;
+
+public class AuthorRequestDTO {
+	
+	private String name;
+	private Long zipCodeId;
+	
+
+}

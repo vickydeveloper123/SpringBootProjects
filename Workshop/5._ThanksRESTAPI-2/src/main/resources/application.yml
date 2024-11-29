@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: 5._ThanksRESTAPI-2
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:1111/
+server.port: 8082
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+

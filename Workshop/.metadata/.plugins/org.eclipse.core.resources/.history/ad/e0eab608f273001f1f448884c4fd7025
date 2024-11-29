@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: 03_WelcomeRESTAPI
+    boot:
+    admin:
+      client:
+				 url : http://localhost:1111/
+#server:
+#  port: 8084
+#eureka:
+#  client:
+#    service-url:
+#      defaultzone: http://localhost:8761/eureka
+
+
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'

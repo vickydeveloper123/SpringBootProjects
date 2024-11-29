@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\SoftwareArchitect\JavaInterviewPreparation\javagainknowledge\.metadata\.plugins\org.eclipse.jdt.core
+396891312.index
+1865797976.index
+3074085739.index

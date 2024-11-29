@@ -1,0 +1,11 @@
+package com.stringprograms;
+
+public class ReversingAStringInJava {
+	
+	public static void main(String[] args) {
+		
+		
+		String name="Dora Sri Vignesh";
+	}
+
+}

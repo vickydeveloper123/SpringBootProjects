@@ -1,0 +1,17 @@
+package com.dora.java8;
+
+public class SumOfDigitsInString {
+	
+	public static void main(String[] args) {
+		
+		  String s = "ab12pq34";
+		  
+		  int sum = s.chars().filter(Character::isDigit)
+		  .map(Character::getNumericValue)
+		  .sum();
+		  
+		  System.out.println("Sum of digits in the string :"+sum);
+		
+	}
+
+}

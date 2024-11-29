@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Student>
+    <studentId>101</studentId>
+    <studentName>Mahesh</studentName>
+    <studentRank>147</studentRank>
+    <address>
+        <city>Hyderabad</city>
+        <state>Telangana</state>
+        <country>India</country>
+    </address>
+    <branch>CSE</branch>
+</Student>

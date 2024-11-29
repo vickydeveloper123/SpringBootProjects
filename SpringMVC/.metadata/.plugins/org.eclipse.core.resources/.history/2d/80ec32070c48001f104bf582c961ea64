@@ -1,0 +1,23 @@
+package com.springmvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.springmvc.entity.Book;
+
+@Controller
+public class BookController {
+	
+	public ModelAndView boookDetails() {
+		ModelAndView view =new ModelAndView();
+		
+		Book b1=new Book(101,"Java",250.0);
+		Book b2=new Book(101,"Java",250.0);
+		Book b3=new Book(101,"Java",250.0);
+		
+		return view;
+		
+	}
+	
+
+}

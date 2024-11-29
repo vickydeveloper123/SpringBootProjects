@@ -1,0 +1,17 @@
+package com.example.demo.dto.mapper;
+
+import com.example.demo.dto.responsedto.BookResponseDTO;
+import com.example.demo.relationship.mode.Book;
+
+public class mapper {
+	
+	
+	public static BookResponseDTO bookToBookResponseDTO(Book book){
+		
+		BookResponseDTO bookResponseDTO=new BookResponseDTO();
+		
+		
+		
+	}
+
+}

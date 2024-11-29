@@ -1,0 +1,8 @@
+package com.amazon;
+
+public class Snippet {
+	public static void main(String[] args) {
+		ticket_id_gen
+	}
+}
+

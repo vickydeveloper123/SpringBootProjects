@@ -1,0 +1,5 @@
+package com.marshelling.project.MarshellingProject.entity;
+
+public class Address {
+
+}

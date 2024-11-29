@@ -1,0 +1,14 @@
+package com.stringprograms;
+
+public class RemovingDuplicatesInString {
+
+	
+	public static void main(String[] args) {
+		
+		String message="Programming In Java";
+		
+		StringBuilder builder=new StringBuilder();
+		message.chars().distinct().forEach(a->builder.append((char) a));
+		System.out.println(builder);
+	}
+}

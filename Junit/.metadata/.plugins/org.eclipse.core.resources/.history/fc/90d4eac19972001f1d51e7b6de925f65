@@ -1,0 +1,19 @@
+package io.dora;
+
+public class MathsUtils {
+
+	public int add(int a, int b) {
+
+		return a + b;
+	}
+
+	
+	
+	public double computerCircleArea(double radius) {
+		return 0;
+	}
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.dora.java8;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class FirstElement {
+	
+	 public static void main(String[] args) {
+	        List<Integer> numbers = Arrays.asList(10, 15, 8, 49, 25, 98, 98, 32, 15);
+	        Integer firstElement = findFirstElement(numbers);
+	        System.out.println("First Element: " + firstElement);
+	        
+	        
+	        
+	        String str1 = "Java articles are Awesome";
+		    
+		    List<String> asList = Arrays.asList(str1);
+		    
+		    str. toLowerCase().chars()
+	        .boxed()
+	        .collect(Collectors.groupingBy(c -> c))
+	        .entrySet().stream()
+	        .filter(e -> e.getValue().size() > 1)
+	        .map(Map.Entry::getKey)
+	        .findFirst()
+	        .map(c -> (char) c.intValue());
+	}
+	        
+	        
+	        
+	    }
+
+	    public static Integer findFirstElement(List<Integer> numbers) {
+	        return numbers.stream()
+	                .findFirst()
+	                .orElse(null);
+	    }
+
+	    
+	    
+	   
+
+
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <studentId>103</studentId>
+    <studentName>Rajesh</studentName>
+    <studentLocation>Karimnagar</studentLocation>
+    <studentAge>24</studentAge>
+</student>

@@ -1,0 +1,65 @@
+package io.dora;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class MathsUtilsTest {
+	MathsUtils mathsUtils;
+	
+	
+	
+	@BeforeAll
+	void beforeAllInit() {
+		System.out.println("This needs to run before all.");
+	}
+	
+	
+	@BeforeEach		
+	void init() {
+		mathsUtils=	new MathsUtils();
+	}
+	
+	
+	@AfterEach
+	void cleanUp() {
+			System.out.println("Clean Up");
+	}
+
+	@Test
+	void test() {
+
+		System.out.println("----------We are testing our applications by having some test cases.-------------");
+
+		int expected = 2;
+
+		MathsUtils mathsTest = new MathsUtils();
+		mathsTest.add(1, 8);
+		int actual = mathsTest.add(1, 1);
+		assertEquals(expected, actual, "This add method should add the two values....");
+
+	}
+
+	@Test
+	void testComputeCircleRadius() {
+		MathsUtils mathsTest = new MathsUtils();
+		assertEquals(314.1592653589793, mathsTest.computerCircleArea(10), "should return right circle area.....");
+	}
+
+	// probably executed around try catch inside the try catch ...[assertEquals].
+
+	@Test
+	void testdivision() {
+
+		MathsUtils mathsUtils = new MathsUtils();
+
+		assertThrows(ArithmeticException.class, () -> mathsUtils.division(1, 0),
+				"divide by zero should throw an excetion as we have given assertthrows it can handle the data  and avoid exceptions whenever we have an exception it will throw to handle the exceptions we have the data asserthrows from the assertions.........");
+
+	}
+
+}

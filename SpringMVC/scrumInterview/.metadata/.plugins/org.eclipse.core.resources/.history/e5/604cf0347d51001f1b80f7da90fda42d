@@ -1,0 +1,47 @@
+package com.example.demo;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.example.demo.entity.Student;
+import com.example.demo.repository.StudentRepo;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.Marshaller;
+
+@SpringBootApplication
+public class MarshellingUnMarshellingProjectApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext run = SpringApplication.run(MarshellingUnMarshellingProjectApplication.class,
+				args);
+
+		StudentRepo bean = run.getBean(StudentRepo.class);
+
+		Student sm1 = new Student(101, "Mahesh", "Hyderabad", 22);
+		Student sm2 = new Student(102, "Vignesh", "Vijayawada", 23);
+		Student sm3 = new Student(103, "Rajesh", "Karimnagar", 24);
+		Student sm4 = new Student(104, "Gopi", "Khammam", 26);
+		List<Student> students = Arrays.asList(sm1, sm2, sm3, sm4);
+		bean.saveAll(students);
+
+		
+		List<Student> all = bean.findAll();
+		JAXBContext jaxbContext = JAXBContext.newInstance(Student.class);
+		 javax.xml.bind.Marshaller marshaller = (javax.xml.bind.Marshaller) jaxbContext.createMarshaller();
+		  marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		  
+		  for (Student student : students) {
+			  marshaller.marshal(student, System.out); 
+		  marshaller.marshal(student, new File("student.xml")); 
+		  
+		  
+		  }
+	}
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.interview;
+
+public class TernerayOperator {
+	
+	
+	
+	public static void main(String[] args) {
+		
+	
+	int x=7;
+	int y=5;
+	
+	System.out.println(x<y?x:y); // 7<5  = 7
+	
+	System.out.println( x>y?x:y+" : Output"); // 7
+	
+	
+	System.out.println("========================================");
+	
+	}
+
+}

@@ -1,0 +1,47 @@
+package com.product.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.product.dto.ProductEvent;
+import com.product.entity.ProductEntity;
+import com.product.service.ProductService;
+
+@RestController
+@RequestMapping("/api")
+public class ProductController {
+
+   
+    private ProductService productService;
+    
+
+    public ProductController(ProductService productService) {
+		super();
+		this.productService = productService;
+	}
+
+	@PostMapping("/product")
+    public ResponseEntity<ProductEntity> createProduct(@RequestBody ProductEvent productEvent) {
+        ProductEntity createdProduct = productService.createProduct(productEvent);
+        return new ResponseEntity<>(createdProduct, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/product/{id}")
+    public ResponseEntity<ProductEntity> updateProduct(@PathVariable("id") long productId, @RequestBody ProductEvent productEvent) {
+        ProductEntity updatedProduct = productService.updateProduct(productId, productEvent);
+        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/product/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable("id") long productId) {
+        productService.deleteProduct(productId);
+        return new ResponseEntity<>("Product successfully deleted", HttpStatus.OK);
+    }
+}

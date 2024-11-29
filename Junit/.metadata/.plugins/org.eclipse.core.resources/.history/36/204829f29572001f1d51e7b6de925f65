@@ -1,0 +1,16 @@
+package io.dora;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MathsUtilsTest {
+
+	@Test
+	void test() {
+
+		System.out.println("----------This test ran-------------");
+	
+	}
+
+}

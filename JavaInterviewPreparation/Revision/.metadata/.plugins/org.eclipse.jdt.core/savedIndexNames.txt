@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\SoftwareArchitect\JavaInterviewPreparation\Revision\.metadata\.plugins\org.eclipse.jdt.core
+3457864836.index
+396891312.index
+1865797976.index

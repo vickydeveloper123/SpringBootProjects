@@ -1,0 +1,5 @@
+package com.example.rest.demo.controller;
+
+public class MySelfDataController {
+
+}

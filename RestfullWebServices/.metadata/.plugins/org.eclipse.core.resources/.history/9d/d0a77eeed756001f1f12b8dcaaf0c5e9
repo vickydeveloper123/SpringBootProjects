@@ -1,0 +1,54 @@
+package com.student.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.student.entity.Book;
+import com.student.studentservice.BookService;
+
+@RestController
+@RequestMapping("/api/books")
+public class BookController {
+
+    @Autowired
+    private BookService bookService;
+
+    @PostMapping("/bookAdding")
+    public ResponseEntity<List<Book>> addBook(@RequestBody Book book) {
+        List<Book> books = bookService.insertingBooks(book);
+        return ResponseEntity.ok(books);
+    }
+
+    @GetMapping(value = "/getBooksData", produces = {"application/json","application/xml"}, consumes = {"application/json","application/xml"})
+    public ResponseEntity<List<Book>> getAllBooks() {
+        List<Book> books = bookService.getAllBooks();
+        return ResponseEntity.ok(books);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Book> getBookById(@PathVariable("id") Integer bookId) {
+        List<Book> books = bookService.getBookById(bookId);
+        return books.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(books.get(0));
+    }
+
+    @GetMapping("/name/{name}")
+    public ResponseEntity<List<Book>> getBookByName(@PathVariable("name") String bookName) {
+        List<Book> books = bookService.getBookName(bookName);
+        return ResponseEntity.ok(books);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<List<Book>> updateBook(@PathVariable("id") String bookId, @RequestBody Book book) {
+        List<Book> books = bookService.updateBook(book, bookId);
+        return ResponseEntity.ok(books);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<List<Book>> deleteAllBooks() {
+        List<Book> books = bookService.deleteBook();
+        return ResponseEntity.ok(books);
+    }
+}

@@ -1,0 +1,25 @@
+package com.example.demo.relationship.mode;
+
+import java.util.ArrayList;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@Table(name="Author")
+public class Author {
+	
+	
+	private Long id;
+	
+	private String name;
+	
+	private ZipCode zipcode;
+	
+	private List<Books> books=new ArrayList<>();
+
+}

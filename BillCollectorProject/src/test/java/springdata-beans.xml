@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+    <bean id="amazonPay" class="com.billcollectorusingAnnotations.AmazonPay"></bean>
+    <bean id="creditCard" class="com.billcollectorusingAnnotations.CreditCard"></bean>
+    <bean id="debitCard" class="com.billcollectorusingAnnotations.DebitCard"></bean>
+    <bean id="UPI" class="com.billcollectorusingAnnotations.UPIpay"></bean>
+
+    <bean id="billcollector" class="com.billcollectorusingAnnotations.BillCollectorPayment">
+    
+    <property name="pay" ref="UPI"/>
+    </bean>
+
+
+
+</beans>
+

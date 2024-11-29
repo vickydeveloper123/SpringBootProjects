@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: 03_WelcomeRESTAPI
+
+server:
+  port:8083

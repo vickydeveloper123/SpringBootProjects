@@ -1,0 +1,111 @@
+package com.train.controller;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.train.binding.PassengerBinding;
+import com.train.binding.TicketBinding;
+import com.train.model.PassengerModel;
+import com.train.model.TicketModel;
+import com.train.service.RillYatraServiceImpl;
+
+@RestController
+public class YatriController {
+	
+	@Autowired
+	private RillYatraServiceImpl rillYatraServiceImpl;
+	
+	
+	@GetMapping(value = "/getAllYatraTickets", produces = { "application/json", "application/xml" })
+	public ResponseEntity<List<TicketBinding>> getAllTicket()  {
+		List<TicketModel> allTickets = rillYatraServiceImpl.getYatratickets();
+
+		List<TicketBinding> ticketBindings = allTickets.stream().map(ticketModel -> {
+			TicketBinding ticketBinding = new TicketBinding();
+			ticketBinding.setName(ticketModel.getName());
+			ticketBinding.setTicketId(ticketModel.getTicketId());
+			ticketBinding.setSource(ticketModel.getSource());
+			ticketBinding.setJourneyDate(ticketModel.getJourneyDate());
+			ticketBinding.setDestination(ticketModel.getDestination());
+			ticketBinding.setPnr(ticketModel.getPnr());
+			ticketBinding.setTicketStatus(ticketModel.getTicketStatus());
+			ticketBinding.setTrainNumber(ticketModel.getTrainNumber());
+			return ticketBinding;
+		}).collect(Collectors.toList());
+
+		return ResponseEntity.ok(ticketBindings);
+	}
+	
+	
+//	@GetMapping(value = "/getYatraTicket/{pnr}", produces = { "application/json", "application/xml" })
+//	@CircuitBreaker(name="RailYatri",fallbackMethod="getTicketFallback")
+//	public ResponseEntity<TicketBinding> getTicket(@PathVariable String pnr)  
+//	{
+//		System.out.println("Rakesh");
+//		System.out.println(pnr);
+//	    TicketModel ticketByPnr = rillYatraServiceImpl.getYatraticketByPnr(pnr);
+//	    TicketBinding ticketBinding = new TicketBinding();
+//	    ticketBinding.setTicketId(ticketByPnr.getTicketId());
+//	    ticketBinding.setName(ticketByPnr.getName());
+//	    ticketBinding.setSource(ticketByPnr.getSource());
+//	    ticketBinding.setJourneyDate(ticketByPnr.getJourneyDate());
+//	    ticketBinding.setDestination(ticketByPnr.getDestination());
+//	    ticketBinding.setPnr(ticketByPnr.getPnr());
+//	    ticketBinding.setTicketStatus(ticketByPnr.getTicketStatus());
+//	    ticketBinding.setTrainNumber(ticketByPnr.getTrainNumber());
+//
+//	    return new ResponseEntity<>(ticketBinding, HttpStatus.OK);
+//	}
+	
+	@PostMapping(value = "/bookYatraTicket", consumes = { "application/xml", "application/json" }, produces = {
+			"application/json", "application/xml" })
+	public ResponseEntity<TicketBinding> bookTicket(@RequestBody PassengerBinding passengerBinding) {
+
+		PassengerModel passengerModel = new PassengerModel();
+		System.err.println(passengerBinding.getJourneyDate());
+		passengerModel.setName(passengerBinding.getName());
+		passengerModel.setSource(passengerBinding.getSource());
+		passengerModel.setJourneyDate(passengerBinding.getJourneyDate());
+		passengerModel.setDestination(passengerBinding.getDestination());
+		passengerModel.setTrainNumber(passengerBinding.getTrainNumber());
+
+		TicketModel ticketModel = rillYatraServiceImpl.saveYatraTicket(passengerModel);
+
+		TicketBinding ticketBinding = new TicketBinding();
+		ticketBinding.setName(ticketModel.getName());
+		ticketBinding.setTicketId(ticketModel.getTicketId());
+		ticketBinding.setSource(ticketModel.getSource());
+		ticketBinding.setJourneyDate(ticketModel.getJourneyDate());
+		ticketBinding.setDestination(ticketModel.getDestination());
+		ticketBinding.setPnr(ticketModel.getPnr());
+		ticketBinding.setTicketStatus(ticketModel.getTicketStatus());
+		ticketBinding.setTrainNumber(ticketModel.getTrainNumber());
+		return new ResponseEntity<>(ticketBinding, HttpStatus.CREATED);
+
+	}
+	
+    public ResponseEntity<TicketBinding> getTicketFallback(String pnr, Throwable throwable) {
+        // Log the error or handle it as needed
+        System.err.println("Fallback triggered due to: " + throwable.getMessage());
+
+        // You can return a default response or an error message
+        TicketBinding fallbackTicket = new TicketBinding();
+        fallbackTicket.setPnr(pnr);
+        fallbackTicket.setTicketStatus("Fallback - No ticket available");
+
+        return new ResponseEntity<>(fallbackTicket, HttpStatus.SERVICE_UNAVAILABLE);
+    }
+	
+	
+
+	
+
+}

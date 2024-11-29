@@ -1,0 +1,18 @@
+package com.irctc;
+
+public class Java8Example {
+	
+	public static void main(String[] args) {
+		
+		int num[]= {1,2,3,4,5};
+		
+		int count=0;
+		for(int valuesAdding:num) {
+			System.out.println("Values  in the array :"+count);
+
+			count=count+valuesAdding;
+		}
+		System.out.println("Values added in the array :"+count);
+	}
+
+}

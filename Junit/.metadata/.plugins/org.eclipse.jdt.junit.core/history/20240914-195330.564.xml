@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MathsUtilsTest" project="Junit5-basics" tests="4" started="4" failures="0" errors="0" ignored="1">
+  <testsuite name="io.dora.MathsUtilsTest" time="0.015" displayname="MathsUtilsTest" uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]">
+    <testcase name="test" classname="io.dora.MathsUtilsTest" time="0.006" displayname="Testing add method...." uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]/[method:test()]"/>
+    <testcase name="testDisabled" classname="io.dora.MathsUtilsTest" time="0.0" ignored="true" displayname="TTD method should not be run.." uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]/[method:testDisabled()]"/>
+    <testcase name="testdivision" classname="io.dora.MathsUtilsTest" time="0.002" displayname="testdivision()" uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]/[method:testdivision()]"/>
+    <testcase name="testComputeCircleRadius" classname="io.dora.MathsUtilsTest" time="0.002" displayname="testComputeCircleRadius()" uniqueid="[engine:junit-jupiter]/[class:io.dora.MathsUtilsTest]/[method:testComputeCircleRadius()]"/>
+  </testsuite>
+</testrun>

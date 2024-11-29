@@ -1,0 +1,11 @@
+package com.dora.java8;
+
+public class ReversingStringUsingJava8 {
+	public static void main(String[] args) {
+		
+		String name="Dora";
+		String builder=new StringBuilder(name)
+				.reverse().toString();
+	}
+
+}

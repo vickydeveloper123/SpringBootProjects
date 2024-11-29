@@ -1,0 +1,9 @@
+package com.dora.java8;
+
+public class FindingDuplicateElementsUsingStreamFunction {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

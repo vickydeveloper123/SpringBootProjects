@@ -1,0 +1,13 @@
+package com.dora.java8;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class NumbersStartingWithOne {
+	
+	public static void main(String[] args) {
+		
+		List<Integer> numbers= Arrays.asList(11,12,13,23,32,43,4,543,1,435,345,324,343,34,642,62,723,52,32);
+	}
+
+}

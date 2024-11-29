@@ -1,0 +1,12 @@
+package com.dora.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class GreetRestAPI {
+	
+	public String getGreetMessage() {
+		String message="Have A GREAT SUBJECT MICROSERVERICES";
+	}
+
+}

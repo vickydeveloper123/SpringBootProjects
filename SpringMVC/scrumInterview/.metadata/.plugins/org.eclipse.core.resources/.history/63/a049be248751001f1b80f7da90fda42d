@@ -1,0 +1,38 @@
+package com.marshelling.project.MarshellingProject.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@XmlRootElement(name="student")
+@XmlAccessorType(XmlAccessType.FIELD)
+@Table(name="student_marshelling")
+public class Student {
+	@Id
+	private  Integer studentId;
+	private String studentName;
+	private Integer studentRank;
+	
+	
+	
+	private Address address;
+	private String branch;
+
+	public Student(String branch) {
+
+	}
+
+	
+
+}

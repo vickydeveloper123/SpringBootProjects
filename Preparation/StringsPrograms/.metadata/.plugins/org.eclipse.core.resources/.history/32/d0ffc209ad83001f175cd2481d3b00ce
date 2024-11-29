@@ -1,0 +1,23 @@
+package com.stringprograms;
+
+public class ReversingAStringInJava {
+	
+	public static void main(String[] args) {
+		
+		
+		String name="Dora Sri Vignesh";
+		
+		String[] split = name.split(name);
+		
+		String reversedName="";
+		
+		String finalReversedName="";
+		
+		for(int i=0;i>=name.length()-1;i--) {
+			
+			reversedName= reversedName+name.charAt(i);
+			
+		}
+	}
+
+}

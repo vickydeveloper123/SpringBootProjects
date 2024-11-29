@@ -1,0 +1,19 @@
+package com.dora;
+
+public class Students {
+	
+	public String name;
+	public int rollNo;
+	public long id;
+	public String email;
+	
+	Students(){
+		System.out.println(" default constructor has been created.....");
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+	
+
+}

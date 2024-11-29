@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 4_GreetRESTAPI-1
+		
+		
